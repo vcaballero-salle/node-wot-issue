@@ -1,0 +1,23 @@
+{
+  "name": "mytemperaturething",
+  "version": "1.0.0",
+  "description": "",
+  "main": "myTemperatureThing.js",
+  "scripts": {
+    "start": "node example.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gist.github.com/ddf2e03f40fb976d9d4b925fbbb9d381.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gist.github.com/ddf2e03f40fb976d9d4b925fbbb9d381"
+  },
+  "homepage": "https://gist.github.com/ddf2e03f40fb976d9d4b925fbbb9d381",
+  "dependencies": {
+    "@node-wot/binding-http": "^0.8.3",
+    "@node-wot/core": "^0.8.3"
+  }
+}
