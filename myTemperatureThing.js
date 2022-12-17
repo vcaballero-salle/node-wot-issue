@@ -45,7 +45,7 @@ servient.start().then((WoT) => {
             console.log("Produced " + thing.getThingDescription().title);
             console.log(thing)
             // init property values
-            //thing.writeProperty("temperature", getTemperature());
+            thing.writeProperty("temperature", getTemperature());
 
             thing.setPropertyReadHandler("temperature", function () {
                 return new Promise((resolve, reject) => {
@@ -66,7 +66,7 @@ servient.start().then((WoT) => {
             setInterval(() => {
                 var curTemp = getTemperature();
                 console.log("current temperature is ", curTemp)
-                //thing.writeProperty("temperature", curTemp)
+                thing.writeProperty("temperature", curTemp)
                 if (curTemp > 5) {
                     thing.emitEvent("overheat")
                 }
@@ -88,7 +88,7 @@ servient.start().then((WoT) => {
             function changeTemperature(newValue) {
                 // normally, you would do physical action to change the temperature
                 //do nothing
-                //thing.writeProperty("temperature", newValue);
+                thing.writeProperty("temperature", newValue);
                 return;
             }
         })
