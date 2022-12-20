@@ -2,9 +2,9 @@
   "name": "mytemperaturething",
   "version": "1.0.0",
   "description": "",
-  "main": "myTemperatureThing.js",
+  "main": "termometer.js",
   "scripts": {
-    "start": "node example.js"
+    "start": "node termometer.js"
   },
   "repository": {
     "type": "git",

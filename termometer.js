@@ -4,6 +4,8 @@ const HttpServer = require('@node-wot/binding-http').HttpServer;
 const servient = new Servient();
 servient.addServer(new HttpServer());
 
+let temperature = 0;
+
 servient.start().then((WoT) => {
     WoT.produce({
         title: "TemperatureController",
@@ -45,11 +47,11 @@ servient.start().then((WoT) => {
             console.log("Produced " + thing.getThingDescription().title);
             console.log(thing)
             // init property values
-            thing.writeProperty("temperature", getTemperature());
+            temperature = 20;
 
             thing.setPropertyReadHandler("temperature", function () {
                 return new Promise((resolve, reject) => {
-                    resolve(getTemperature());
+                    resolve(temperature);
                 });
             });
 
@@ -64,11 +66,11 @@ servient.start().then((WoT) => {
 
             // check the temperature every 5 seconds, alert if temperature too high
             setInterval(() => {
-                var curTemp = getTemperature();
-                console.log("current temperature is ", curTemp)
-                thing.writeProperty("temperature", curTemp)
-                if (curTemp > 5) {
-                    thing.emitEvent("overheat")
+                console.log("current temperature is ", temperature)
+                temperature = temperature + 1;
+
+                if (temperature % 10 === 0) {
+                    thing.emitEvent("overheat", temperature);
                 }
             }, 5000);
 
@@ -80,7 +82,7 @@ servient.start().then((WoT) => {
             function getTemperature() {
                 // normally, you would call the temperature sensor's function to read the actual temperature value
                 // return new Promise((resolve, reject) => {
-                return Math.random() * Math.floor(50);
+                return temperature;
                 // resolve(5); //uncomment to test incrementing etc.
                 //  });
             }
@@ -88,7 +90,7 @@ servient.start().then((WoT) => {
             function changeTemperature(newValue) {
                 // normally, you would do physical action to change the temperature
                 //do nothing
-                thing.writeProperty("temperature", newValue);
+                temperature = newValue;
                 return;
             }
         })
