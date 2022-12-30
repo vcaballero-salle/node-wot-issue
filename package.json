@@ -18,6 +18,7 @@
   "homepage": "https://gist.github.com/ddf2e03f40fb976d9d4b925fbbb9d381",
   "dependencies": {
     "@node-wot/binding-http": "^0.8.3",
+    "@node-wot/browser-bundle": "^0.8.3",
     "@node-wot/core": "^0.8.3"
   }
 }

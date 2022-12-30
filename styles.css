@@ -1,0 +1,13 @@
+div {
+    display: flex;
+    flex-direction: row;
+}
+div article {
+    width: 48%;
+    margin: 0 1%;
+    border: 1px solid #000;
+}
+
+form {
+    width: fit-content;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main>
+    <h1>Dashboard</h1>
+    <div>
+        <article>
+            <form>
+                <label for="thing-1">Thing location</label>
+                <input id="thing-1" type="url">
+                <input id="thing-1-consume" type="button" value="Send">
+            </form>
+            <p>Description:</p>
+            <p id="thing-1-description"></p>
+            <p>First property:</p>
+            <p id="thing-1-first-property"></p>
+            <p>First action:</p>
+            <form>
+                <label for="thing-1-first-action-input">Input</label>
+                <input id="thing-1-first-action-input" type="text">
+                <input id="thing-1-first-action-button" type="button" value="Send">
+            </form>
+        </article>
+        <article>
+            <form>
+                <label for="thing-2">Thing location</label>
+                <input id="thing-2" type="url">
+                <input id="thing-2-consume" type="button" value="Send">
+            </form>
+            <p>Description:</p>
+            <p id="thing-2-description"></p>
+            <p>First property:</p>
+            <p id="thing-2-first-property"></p>
+            <p>First action:</p>
+            <form>
+                <label for="thing-2-first-action-input">Input</label>
+                <input id="thing-2-first-action-input" type="text">
+                <input id="thing-2-first-action-button" type="button" value="Send">
+            </form>
+        </article>
+    </div>
+</main>
+<script src="./node_modules/@node-wot/browser-bundle/dist/wot-bundle.min.js" defer></script>
+<script src="index.js" defer></script>
+</body>
+</html>
