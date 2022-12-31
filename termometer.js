@@ -69,6 +69,8 @@ servient.start().then((WoT) => {
                 console.log("current temperature is ", temperature)
                 temperature = temperature + 1;
 
+                thing.emitPropertyChange("temperature", temperature);
+
                 if (temperature % 10 === 0) {
                     thing.emitEvent("overheat", temperature);
                 }
