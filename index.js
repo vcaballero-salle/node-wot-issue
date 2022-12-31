@@ -22,8 +22,10 @@ servient.start()
                 .then(async (thing) => {
                     console.log("Thing Description:", thing.getThingDescription())
                     thing.observeProperty(Object.keys(thing.getThingDescription().properties)[0], (data) => {
-                        console.log("Temperature:", data)
-                        document.getElementById('thing-1-first-property-value').innerText = data
+                        data.value().then((value) => {
+                            console.log("Temperature:", value)
+                            document.getElementById('thing-1-first-property-value').innerText = value
+                        })
                     })
                     thing.subscribeEvent("overheat", async (data) => {
                         console.log("overheat event:", await data.value())
